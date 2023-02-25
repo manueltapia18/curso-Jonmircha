@@ -133,3 +133,55 @@ console.log(arr3);
 //* las funciones declaradas pueden generar hoisting ejemplo de funciones declaradas: funtion nombre (){};
 
 //* las arrow funtion tienen un return implicito, cuando tienen un solo parametro se puede omitir los parentesis, y cuando no tiene pararemtros se debe colocar los parentesisi
+
+// prototipos
+
+/* clases = modelo a seguir
+*objetos = una instancia de una clase,
+*atributo= caracteristica o propiedad de un objeto,(variable dentro de un objeto)
+*metodo = son acciones que un objeto puede realizar*/
+
+//funcion constructura
+
+/*function animal(nombre,genero) {
+  this.nombre = nombre;
+  this.genero = genero;
+  this.sonar = function() {
+    console.log("guau guau");
+  }
+  this.saludar = function() {
+    console.log(`hola mi nombre es ${this.nombre}`);
+  }
+}*/
+
+const abril = new animal("abril", "hembra"),
+        aurelito = new animal("aurelio","macho");
+
+//lo ideal es que los metodos en una funcion contructora queden por fuera de la funcion ejemplo
+
+function animal(nombre,genero) {
+  this.nombre = nombre;
+  this.genero = genero;
+}
+
+animal.prototype.sonar = function() {
+    console.log("guau guau");
+  }
+animal.prototype.saludar = function() {
+    console.log(`hola mi nombre es ${this.nombre}`);
+  }
+
+  
+
+//herencia prototipica
+
+function perro(nombre,genero,tamanio) {
+  this.super = animal;
+  this.super(nombre,genero);
+  this.tamanio = tamanio;
+}
+//perro esta heredando de animal
+perro.prototype = new animal();
+perro.prototype.constructor = perro;
+
+//sobreescritura de metodo del prototipo padre en el hijo
