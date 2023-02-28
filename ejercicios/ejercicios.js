@@ -30,3 +30,17 @@ console.log(miFuncion3('hola que tal'));
 
 //ejercicios 4
 
+// function miFuncion4(str, value) {
+  
+// }
+// console.log(miFuncion4("hola mundo",3));
+function Concatenar_String(A_Repetir, Num_Veces){
+  let Valor_Final = "";
+for(let i = 0; i < Num_Veces; i ++){
+		Valor_Final += A_Repetir;
+	} 
+	return Valor_Final;
+}
+
+console.log(Concatenar_String("hola mundo ",3));
+
