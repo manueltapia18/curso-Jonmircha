@@ -6,11 +6,15 @@
 
 // ejercicio 1
 
-function miFuncion(cadena) {
-  return cadena;
-}
+// function miFuncion(cadena) {
+//   return cadena;
+// }
 
-console.log(miFuncion('hola mundo').length);
+// console.log(miFuncion('hola mundo').length);
+
+//forma de realizarlo con jonmircha
+
+let miFuncion = (cadena = '') => (!cadena)? console.warn("debes ingresar una cadena"): console.info(`el string ${cadena} que ingresaste tiene ${cadena.length}'caracteres`);
 
 
 //ejercicio 2
