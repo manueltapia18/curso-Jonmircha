@@ -19,10 +19,16 @@ let miFuncion = (cadena = '') => (!cadena)? console.warn("debes ingresar una cad
 
 //ejercicio 2
 
-function miFuncion2(nombre) {
-  return nombre;
-}
-console.log(miFuncion2('hola mundo').slice(0,5));
+// function miFuncion2(nombre) {
+//   return nombre;
+// }
+// console.log(miFuncion2('hola mundo').slice(0,5));
+
+//forma de realizarlo con jonmircha
+
+const recortarTexto = (cadena2 = '', longitud = undefined)=>(!cadena2)?console.warn('no ingresaste ningun caracter'):console.log(cadena2.slice(0,longitud));
+
+console.log("hola mundo",5);
 
 
 //ejercicio 3
@@ -38,13 +44,32 @@ console.log(miFuncion3('hola que tal'));
   
 // }
 // console.log(miFuncion4("hola mundo",3));
-function Concatenar_String(A_Repetir, Num_Veces){
-  let Valor_Final = "";
-for(let i = 0; i < Num_Veces; i ++){
-		Valor_Final += A_Repetir;
-	} 
-	return Valor_Final;
-}
+// function Concatenar_String(A_Repetir, Num_Veces){
+//   let Valor_Final = "";
+// for(let i = 0; i < Num_Veces; i ++){
+// 		Valor_Final += A_Repetir;
+// 	} 
+// 	return Valor_Final;
+// }
 
-console.log(Concatenar_String("hola mundo ",3));
+// console.log(Concatenar_String("hola mundo ",3));
+
+//forma de realizarlo con jonmircha
+
+const repetirTexto = (texto = "", veces = undefined) => {
+  if (!texto) {
+    return console.warn("no ingresaste ningun texto");
+  }
+  if (veces === undefined) {
+    return console.warn("no ingresaste valor para repetir");
+  }
+  if (Math.sign(veces)=== -1) {
+    return console.error("el numero no puede ser negativo");
+  }
+
+  for (let i = 0; i <= veces; i++) {
+    console.log(`${texto},${i}`);
+    
+  }
+}
 
