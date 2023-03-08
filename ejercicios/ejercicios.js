@@ -146,6 +146,28 @@ const capicua =(numero9= 0) => {
   :console.info(`no es capicua numero original ${numero9} numero al reves ${alRevez}`)
 }
 
+//ejercicio 11
+
+const factorial = (numero7 = undefined) => {
+  if(numero7 === undefined) return console.error("no ingresaste nungun valor");
+  if(typeof numero7 !== "number") return console.error(`el valor ${numero7} ingresado no es un numero`);
+
+  if(Math.sign(numero7)=== -1)return console.error("el numero ingresado no puede ser negativo");
+
+  let factorial2 = 1;
+  for (let i = numero7; i > 1; i--) {
+    factorial2*=i;
+  }
+  return console.info (`el factorial de ${numero7} es ${factorial2}`)
+}
+
+// 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+
+// 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+
 
 
 
