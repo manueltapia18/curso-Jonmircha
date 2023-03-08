@@ -81,11 +81,120 @@ const repetirTexto = (texto = "", veces = undefined) => {
 
 //ejercicio 5
 
-function miFuncion5(str2) {
+const invertirCadena = (cadena3="") => (!cadena3) ? console.warn('no ingresaste una cadena de texto'):console.info(cadena3.split("").reverse().join(""))
 
-  return str2.split("").reverse().join("");
-}
-
-console.log(miFuncion5('hola mundo'));
+console.log(invertirCadena('javascript es un lenguaje increible'));
 
 // ejercicio 6
+
+const textoEnCadena =(cadena4 = "", texto2 = "") => {
+  if (!cadena4) {
+    return console.warn("no ingresaste el texto largo");
+  };
+
+  if (!texto2) {
+    return console.warn("no ingresaste la palabra a evaluar")
+  };
+
+  let i = 0,
+      contador = 0;
+
+  while (i!== -1) {
+    i = cadena4.indexOf(texto2,i)
+    if (i!==-1) {
+      i++;
+      contador++;
+    }
+  }
+  return console.info(`la palabra ${texto2} se repite ${contador} veces`);
+}
+
+textoEnCadena();
+
+//ejercicio 8
+
+const eliminarCaracteres = (texto6="", patron="") => (!texto6)?console.log("no ingresaste un texto"):(!patron)? console.warn("no ingresaste un patron de caracteres"):console.info(texto6.replace(new RegExp(patron,"ig"),""));
+
+// 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+// 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+// 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+const numeroAleatorio = (max = 0 ,min = 0) => {
+if (!min) {
+  return console.log('coloca un valor minmo');
+};
+if (!max) {
+  return console.log("colca un maximo");
+};
+
+return Math.random() * (max - min)+min;
+}
+
+console.log(numeroAleatorio(8,9));
+
+//ejercicios 10
+
+const capicua =(numero9= 0) => {
+  if(!numero9)return console.warn("no ingresaste un numero");
+  if(typeof numero9 !== "number")return console.error( `el valor ${numero9} ingresado no es un numero`);
+
+  numero9 = numero9.toString();
+  let alRevez = numero9.split("").reverse().join("");
+
+  return (numero9 === alRevez)
+  ?console.info(`si es capicua, numero original ${numero9}, numero al revez ${alRevez}`)
+  :console.info(`no es capicua numero original ${numero9} numero al reves ${alRevez}`)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
