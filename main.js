@@ -1,4 +1,4 @@
-// objetos
+ // objetos
 //se accede mediante puntos o corchetes
 
 //funciones
@@ -302,4 +302,24 @@ console.log(expReg2.exec(cadena));
 //funciones anonimas//
 
 //funcion anonima auto ejecutable
+
+// setTimeout y setInterval//
+//*esto hace que cierta accion se ejecute al tiempo que queramos*//
+
+let temporizador = setTimeout(() => {
+  console.log("ejecutando un setTimeOut, ");
+},3000);
+
+
+let temporizador2 = setInterval(()=>{
+  console.log("esto se ejecuta indefinidamente, cada cierto intervalo de tiempo");
+},1000)
+
+//ejemplo 
+
+setInterval(()=>{
+  console.log(new Date().toTimeString());
+},1000)
+
+// asincronia y el event loop//
 
