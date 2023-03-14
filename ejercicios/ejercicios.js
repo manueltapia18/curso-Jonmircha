@@ -167,6 +167,7 @@ const factorial = (numero7 = undefined) => {
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 
+// quedamos por el video numero 60 el proximo video en ver es el 61 el cual es del DOM//
 
 
 
