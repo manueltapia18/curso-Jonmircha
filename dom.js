@@ -105,7 +105,7 @@ let text = `
 
 // el innerText no hace parte del estandar fue creado solo para internet explorer y agrega con todo y etiquetas
 $whatIsDom.innerText = text;
-//tenemos tambien textContent que al igualk que innerText no agrega las etiquetas respeta los espaciados y es mas utilizado ejemplo:
+//tenemos tambien textContent que al igual que innerText no agrega las etiquetas respeta los espaciados y es mas utilizado ejemplo:
 $whatIsDom.textContent = text;
 //mientras que innerHTML si reenderiza las etiquetas colocadas ejemplo p, br etx etiquetas de html ejmplo:
 $whatIsDom.innerHTML = text;
@@ -114,4 +114,85 @@ $whatIsDom.innerHTML = text;
 
 //tambien podemos usar la propiedad outerHTML esta reemplaza de mejor manera lo colocado de html//
 $whatIsDom.outerHTML = text;
+
+const $cards = document.querySelector(".cards");
+
+console.log($cards);
+
+//para obtener algun elemento seleccionado//
+
+//para obtener el elemento padre del elemento seleccionado
+console.log($cards.parentElement);
+//para obtener el primer elemento se hace lo siguiente//
+console.log($cards.firstElementChild);
+
+const $figure = document.createElement("figure"),
+        $img = document.createElement("img"),
+        $figcaption = document.createElement("figcaption"),
+        $figcaptionText = document.createTextNode("Animals new");
+
+//aqui se agregara atributos en este caso SRC Y ALT//
+$img.setAttribute("src","https://placeimg.com/200/200/animals");
+$img.setAttribute("alt","Animals");
+//aqui se agregara una clase en este caso CARD//
+$figure.classList.add("card");
+//aqui se agregara el texto colocado en figcaptionText llamado ANIMALS//
+$figcaption.appendChild($figcaptionText);
+$figure.appendChild($img);
+$figure.appendChild($figcaption);
+
+$cards.appendChild($figure);
+        
+const estaciones = ['primavera','otono','verano','invierno'],
+    $ul = document.createElement("ul");
+
+document.write("<h3>Estaciones del anio</h3>");
+document.body.appendChild($ul);
+
+estaciones.forEach((el)=>{
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $ul.appendChild($li);
+});
+
+//tambien se puede hacer con innnertHTML//
+
+const continentes = ['africa','america','asia','europa','oceania'];
+const $ul2 = document.createElement("ul");
+
+document.write("<h3>continentes del mundo</h3>");
+document.body.appendChild($ul2);
+
+
+$ul2.innerHTML = "";
+continentes.forEach((el)=>($ul2.innerHTML += `<li>${el}</li>`))
+
+//para trabajar con este tipo de cosas se recomienda usar fragmentos esto ayudara a mejorar el rendimineto de nuestra aplicacion ejemplo//
+
+const meses = ['enero','febrero','marzo','abril','mayo', 'junio', 'julio','agosto','septiembre','obtubre','noviembre','diciembre'];
+const $ul3 = document.createElement('ul');
+const $fragment = document.createDocumentFragment();
+
+meses.forEach((el)=>{
+    const $li = document.createElement('li');
+    $li.textContent = el;
+    $fragment.appendChild($li);
+});
+
+document.write("<h3>Meses del anio </h3>");
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
