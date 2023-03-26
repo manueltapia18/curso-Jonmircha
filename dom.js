@@ -183,6 +183,146 @@ document.write("<h3>Meses del anio </h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
 
+const $template = document.getElementById("template-card").content,
+        $fragment2 = document.createDocumentFragment(),
+        cardContent =[
+            {
+                title: "Tecnologia",
+                img:"https://placeimg.com/200/200/tech",
+            },
+            {
+                title: "Animal",
+                img:"https://placeimg.com/200/200/Animals",
+            },
+            {
+                title: "Gente",
+                img:"https://placeimg.com/200/200/people",
+            },
+            {
+                title: "Arquitectura",
+                img:"https://placeimg.com/200/200/arch",
+            },
+            {
+                title: "Naturaleza",
+                img:"https://placeimg.com/200/200/Nature",
+            },
+        ]
+
+cardContent.forEach(el2 => {
+    $template.querySelector("img").setAttribute("src", el2.img);
+    $template.querySelector("img").setAttribute("alt", el2.title);
+    $template.querySelector("figcaption").textContent = el2.title;
+
+    // el importNode es para clonar un template o un nodo el true se utiliza para, este se le agregara todo lo que se le agrego antes as como la img, el src etc, este ademas funciona como algo parecido a una clase constructora//
+    let $clone = document.importNode($template,true);
+    $fragment2.appendChild($clone);
+})
+
+$cards.appendChild($fragment2);
+2
+
+const $newCard = document.createElement(".card");
+
+$newCard.innerHTML = `<img src="https://placeimg.com/200/200/any" alt="Any">
+<figcaption>Any</figcaption>`;
+$newCard.classList.add("card");
+//el clone node nos sirve para clonar al igual que el importNode, se le debe colocar true para qe colene todo//
+// const $cloneCards = $cards.cloneNode(true)
+
+
+// para reemplazar algun elemento del html mediante el dom se puede hacer de la siguiente forma//
+
+// $cards.replaceChild($newCard,$cards.children[2]);
+
+//hay un metodo para agregar un elemento antes de cualquiera por ejemplo en el siguiente ejemplo, se agregara una card antes de la primera tarjeta//
+
+// $cards.insertBefore($newCard,$cards.firstElementChild);
+//para eliminar tambien tenemos el siguiente numero//
+// $cards.removeChild($newCard.lastElementChild);
+
+//con el cloneNode ya tendriamos una seccion de card iguales acontinuacion//
+document.appendChild($cloneCards);
+
+
+//de la siguiente forma se modifican elementos de forma nueva y mas facil //
+
+// insertAdjacent...
+// .insertAdjacentElement(position,el) este agrega un elemento vendria ser como un appendChild
+// .insertAdjacentHtml(position,html) este agrega un html, vendria ser como un innertHTML
+// .insertAdjacentText(position,text) este agrega texto vendria ser un textContent
+
+// posiciones osea posiciones que se le colocarian a los insertAdjacent:
+// beforeBegin(hermano anterior)
+// afterbegion(primer hijo)
+// beforeend(ultimo hijo)
+// afterend(hermano siguiente)
+
+
+$newCard.classList.add("card");
+
+const $cloneCards = $cards.cloneNode(true)
+const $newCard2 = document.createElement("figure");
+
+let $contenCard = `<img src="https://placeimg.com/200/200/any" alt="Any">
+<figcaption>Any</figcaption>`;
+$newCard.classList.add("card");
+//aqui se agregaria un elemento antes de la $newcard que vendria siendo la primera carta//
+$cards.insertAdjacentElement("beforebegin",$newCard);
+
+//acontinuacion se agregara el elemento imagen con todo su contenido//
+$newCard.insertAdjacentHTML("beforeend", $contenCard);
+//acontinuacion se insertara la nueva card que seria $newCard2 a las cartas en la posicion dada.
+$cards.insertAdjacentElement("afterbegin",$newCard2);
+//acontinuacion se agega un texto al html des pues del elemento con la palabra any.
+$newCard2.querySelector("figcaption").insertAdjacentText("afterbegin", "any")
+
+                                        //MANEJO DE EVENTOS/
+
+//la siguiente funcion se le llama un manejador la cual se va a ejecutar mientras el boton o el usuario haga algo.//
+function holaMundo() {
+    alert("mi primer evento");
+    // console.log(Event);
+}
+
+//de la siguiente forma semantica, de esta forma por cada evento solo se le puede colocar una funcioon/
+
+const $eventoSemantico = document.getElementById("evento-2");
+$eventoSemantico.onclick = holaMundo;
+
+
+//nota: cuando se hace una funcion se convierte en un manejador de evento, no se le puede colcar parametros
+//en algunos casos se le agrega la (e) como parametro que hace referencia a EVENTO, igual al que se paso por el console.log anterior
+
+$eventoSemantico.onclick = function (e) {
+    alert("segundo evento");
+    console.log(e);
+}
+
+//NOTA existen los manejadores multiples, a estos se les puede agregar diferentes funciones se hace con un AddEventListen ejemplo
+
+const $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoMultiple.addEventListener("click", holaMundo);
+$eventoMultiple.addEventListener("click", (e)=>{alert("holis")});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

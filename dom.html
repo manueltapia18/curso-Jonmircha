@@ -12,8 +12,8 @@
     }
     .cards{
       display: inline-block;
-      background-color: var(--dark-color);
-      color: var(--yellow-color);
+      background-color: var(--yellow-color);
+      color: var(--dark-color);
       border: thin solid var(--dark-color);
       padding: 1rem;
     }
@@ -82,6 +82,25 @@
       <figcaption>Nature</figcaption>
     </figure>
   </section>
+  
+  <template id="template-card">
+    <figure class="card">
+      <img>
+      <figcaption></figcaption>
+    </figure>
+  </template>
+
+
+  <h3>Eventos en Javascript</h3>
+  <h4>Manejador de eventos</h4>
+
+  <button onclick="holaMundo()">Eventos con atributos HTML</button>
+  <br><br>
+
+  <button id="evento-2">Evenento con manejador semantico </button>
+  <br>
+
+  <button id="evento-multiple">evento multiple </button>
 
   <script src="./dom.js"></script>
 </body>
