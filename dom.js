@@ -221,11 +221,11 @@ cardContent.forEach(el2 => {
 $cards.appendChild($fragment2);
 2
 
-const $newCard = document.createElement(".card");
+// const $newCard = document.createElement(".card");
 
-$newCard.innerHTML = `<img src="https://placeimg.com/200/200/any" alt="Any">
-<figcaption>Any</figcaption>`;
-$newCard.classList.add("card");
+// $newCard.innerHTML = `<img src="https://placeimg.com/200/200/any" alt="Any">
+// <figcaption>Any</figcaption>`;
+// $newCard.classList.add("card");
 //el clone node nos sirve para clonar al igual que el importNode, se le debe colocar true para qe colene todo//
 // const $cloneCards = $cards.cloneNode(true)
 
@@ -241,7 +241,7 @@ $newCard.classList.add("card");
 // $cards.removeChild($newCard.lastElementChild);
 
 //con el cloneNode ya tendriamos una seccion de card iguales acontinuacion//
-document.appendChild($cloneCards);
+// document.appendChild($cloneCards);
 
 
 //de la siguiente forma se modifican elementos de forma nueva y mas facil //
@@ -258,23 +258,23 @@ document.appendChild($cloneCards);
 // afterend(hermano siguiente)
 
 
-$newCard.classList.add("card");
+// $newCard.classList.add("card");
 
 const $cloneCards = $cards.cloneNode(true)
 const $newCard2 = document.createElement("figure");
 
 let $contenCard = `<img src="https://placeimg.com/200/200/any" alt="Any">
 <figcaption>Any</figcaption>`;
-$newCard.classList.add("card");
+// $newCard.classList.add("card");
 //aqui se agregaria un elemento antes de la $newcard que vendria siendo la primera carta//
-$cards.insertAdjacentElement("beforebegin",$newCard);
+// $cards.insertAdjacentElement("beforebegin",$newCard);
 
 //acontinuacion se agregara el elemento imagen con todo su contenido//
-$newCard.insertAdjacentHTML("beforeend", $contenCard);
+// $newCard.insertAdjacentHTML("beforeend", $contenCard);
 //acontinuacion se insertara la nueva card que seria $newCard2 a las cartas en la posicion dada.
 $cards.insertAdjacentElement("afterbegin",$newCard2);
 //acontinuacion se agega un texto al html des pues del elemento con la palabra any.
-$newCard2.querySelector("figcaption").insertAdjacentText("afterbegin", "any")
+// $newCard2.querySelector("figcaption").insertAdjacentText("afterbegin", "any")
 
                                         //MANEJO DE EVENTOS/
 
@@ -306,11 +306,50 @@ $eventoMultiple.addEventListener("click", holaMundo);
 $eventoMultiple.addEventListener("click", (e)=>{alert("holis")});
 
 
+//cuando se necesita pasar un parametro a una funcion manejadora se hace lo siguiente//
 
+function saludar(nombre = "desconocid@") {
+    alert(`hola ${nombre}`)
+}
 
+//lo anterior me dara una especie de error, para evitarlo esta funcion "saludar", se ivoca en el addeventlistener en una arrowfuntion ejemplo//
 
+$eventoMultiple.addEventListener("click",()=>saludar());
 
+//para remover eventos//
 
+const $eventoRemover = document.getElementById("evento-remover");
+
+$eventoRemover.addEventListener("dblclick",(e)=>{
+    alert(`removiendo el evento de tipo ${e.type}`);
+    console.log(e);
+})
+
+//para remover un evento se debe hacer de la siguiente forma//
+
+// const  removerDobleClick = (e)=>{
+//     alert(`removiendo el evento de tipo ${e.type}`);
+//     console.log(e);
+//     $eventoRemover.removeEventListener("dblclick",removerDobleClick);
+//     $eventoRemover.disabled =  true;
+// }
+
+// $eventoRemover.addEventListener("dblclick", removerDobleClick);
+
+const $divsEventos =document.querySelectorAll(".eventos-flujo div");
+
+console.log($divsEventos);
+
+//para agregar eventos dinamicos nos podemos apoyar con los loops ejemplo 
+
+function flujoEvento(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+};
+
+$divsEventos.forEach((div)=>{
+    //este es el efecto burbuja que se propaga del mas pequenio al mas grande en este caso del 3 al uno, cuando el 3 item del addeventlistener esta en true es efecto captura, del mas grande al mas pequenio 
+    div.addEventListener("click",flujoEvento, false)
+});
 
 
 

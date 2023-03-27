@@ -32,6 +32,21 @@
     .serpia{
       filter: sepia(1);
     }
+    .eventos-flujo div{
+      padding: 4rem;
+      font-size: 2rem;
+      text-align: center;
+      color:  black;
+    }
+    .uno{
+      background-color: yellow;
+    }
+    .dos{
+      background-color: gold;
+    }
+    .tres{
+      background-color: lightyellow;
+    }
   </style>
 </head>
 <body>
@@ -101,6 +116,21 @@
   <br>
 
   <button id="evento-multiple">evento multiple </button>
+  <br>
+  <button id="evento-remover"> removiendo evento </button>
+
+  <h4>FLUJO DE EVENTO</h4>
+  <section class="eventos-flujo">
+    <div class="uno">
+      1
+      <div class="dos">
+        2
+        <div class="tres">
+          3
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script src="./dom.js"></script>
 </body>
