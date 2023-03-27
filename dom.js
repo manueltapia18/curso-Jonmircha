@@ -342,17 +342,39 @@ console.log($divsEventos);
 
 //para agregar eventos dinamicos nos podemos apoyar con los loops ejemplo 
 
-function flujoEvento(e) {
-    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
-};
+// function flujoEvento(e) {
+//     console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+// };
 
 $divsEventos.forEach((div)=>{
-    //este es el efecto burbuja que se propaga del mas pequenio al mas grande en este caso del 3 al uno, cuando el 3 item del addeventlistener esta en true es efecto captura, del mas grande al mas pequenio 
+    //este es el efecto burbuja que se propaga del mas pequenio al mas grande en este caso del 3 al uno, cuando el 3 item del addeventlistener esta en true es efecto captura, del mas grande al mas pequenio, a esto tambien se le llama propagacion
     div.addEventListener("click",flujoEvento, false)
 });
 
 
 
+//stopPropagation & preventDefault esto se utiliza cuando no queremos que se propague el evento tomaremos como referencia el ejemplo pasado 
+
+//storpPropagation es para evitar la propagacion del evento ejemplo:
+
+function flujoEvento(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+    //acontinuacion el stop propagation evitara que se propague el evento
+    e.stopPropagation()
+};
+
+$divsEventos.forEach((div)=>{
+    div.addEventListener("click",flujoEvento, false)
+});
+
+const $linkEvento = document.querySelector(".eventos-flujo a");
+
+$linkEvento.addEventListener("click",(e)=>{
+    alert("hola soy tu amigo y docente digital Jonathan MirCha");
+
+    //el preventDefault lo que hace es quitar lo que viene por defecto en este caso seria la direccion o pagina que nos envia este link y solo ejecuta la alert
+    e.preventDefault();
+})
 
 
 
