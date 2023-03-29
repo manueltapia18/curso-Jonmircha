@@ -187,7 +187,7 @@ const $template = document.getElementById("template-card").content,
         $fragment2 = document.createDocumentFragment(),
         cardContent =[
             {
-                title: "Tecnologia",
+                title: "Tecnologia", 
                 img:"https://placeimg.com/200/200/tech",
             },
             {
@@ -378,7 +378,7 @@ $linkEvento.addEventListener("click",(e)=>{
 
 //delegacion de eventos//
 
-document.addEventListener("click", (e)=> {
+document.addEventListener("click", (e)=> { 
     console.log("click en",e.target);
 
     if (e.target.matches(".eventos-flujo div")) {
@@ -388,6 +388,7 @@ document.addEventListener("click", (e)=> {
     if (e.target.matches(".evento-flujo a")) {
         alert("hola soy tu amigo y docente digital jonatan mircha");
         e.preventDefault
+        return
     }
 })
 
