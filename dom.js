@@ -376,8 +376,59 @@ $linkEvento.addEventListener("click",(e)=>{
     e.preventDefault();
 })
 
+//delegacion de eventos//
+
+document.addEventListener("click", (e)=> {
+    console.log("click en",e.target);
+
+    if (e.target.matches(".eventos-flujo div")) {
+        flujoEvento(e)
+    }
+
+    if (e.target.matches(".evento-flujo a")) {
+        alert("hola soy tu amigo y docente digital jonatan mircha");
+        e.preventDefault
+    }
+})
+
+const $btnAbrir = document.getElementById("abrir-ventana"),
+        $btnCerrar = document.getElementById("cerrar-ventana"),
+        $btnImprimir = document.getElementById("imprimir-ventana");
 
 
+//para abrir una ventana como las antiguas ventanas emergentes se puede utilizar el metodo window.open ejemplo:
+
+
+let ventana;
+$btnAbrir.addEventListener("click",(e)=> {
+    ventana = window.open("https://jonmircha.com");
+})
+
+$btnCerrar.addEventListener("click",(e)=> {
+    //para cerrar una ventana se puede hacer con el metodo close ejepmo:
+    ventana.close();
+});
+
+$btnImprimir.addEventListener("click",(e)=> {
+    //para imprimir una ventana se puede hacer con el metodo print ejepmo:
+    window.print();
+});
+
+//Objetos: URL, Historial y Navegador//
+
+//objeto Url (location)
+console.log(location);
+console.log(location.origin);
+console.log(location.protocol);
+console.log(location.host);
+console.log(location.hostname);
+console.log(location.port);
+console.log(location.href);
+console.log(location.hash);
+console.log(location.pathname);
+console.log(location.search );
+
+// estas son las propiedades mas importantes de location//
 
 
 
