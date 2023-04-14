@@ -4,3 +4,5 @@ import { aritmeticos } from "./aritmetica.js";
 
 console.log("archivos modulos.js ");
 console.log(aritmeticos.sumador(3,4));
+
+
