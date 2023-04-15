@@ -67,3 +67,31 @@ function mifuntion9(str,str1) {
 }
 console.log(mifuntion9("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"));
 // 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+function mifuntion10(num1,num2) {
+  return Math.random()*(num2 - num1)+num1;
+}
+console.log(mifuntion10(501,600));
+// 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+function mifuntion11(num) {
+  let str = num.toString();
+  return num.toString() === str.split('').reverse().join('') ? "si":"no"
+}
+console.log(mifuntion11(2002));
+// 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+let nmb = 5;
+let arr = [];
+for (let i = 0; i <= nmb; i++) {
+  arr.push(i);
+}
+console.log(arr);
+let red = arr.sort((a,b)=> a>b?-1:1)
+console.log(red);
+let nbr = 0;
+const blue = red.reduce((a,b)=> b)
+console.log(blue);
+
+
+
+
+
+
