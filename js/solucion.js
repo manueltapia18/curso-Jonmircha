@@ -78,20 +78,39 @@ function mifuntion11(num) {
 }
 console.log(mifuntion11(2002));
 // 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
-let nmb = 5;
-let arr = [];
-for (let i = 0; i <= nmb; i++) {
-  arr.push(i);
+
+function mifuntio12(num) {
+  let num2 = 1;
+  for (let i = 1; i <= num; i++) {
+    num2 *= i;
+  }
+  return num2
 }
-console.log(arr);
-let red = arr.sort((a,b)=> a>b?-1:1)
-console.log(red);
-let nbr = 0;
-const blue = red.reduce((a,b)=> b)
-console.log(blue);
+console.log(mifuntio12(5));
 
-
-
+// 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+function par(num) {
+  if (num % 2 === 0) {
+    return "Numero es par";
+  } else {
+    return "numero impar"
+  };
+}
+console.log(par(2));
+// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+function Fahrenheit(num,str) {
+  if (str === 'c') {
+    return ((num - 32)/1,8) + '°f' 
+  }
+  if (str === 'f') {
+    return ((num * 1.8)+32)+ '°c' 
+  }
+}
+console.log(Fahrenheit(32,"c"));
+// 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+// 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
 
 
 
