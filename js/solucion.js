@@ -111,6 +111,31 @@ console.log(Fahrenheit(32,"c"));
 // 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
 // 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
 // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+// La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+//   - Todos los datos del objeto son obligatorios.
+//   - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 
+//      7 restantes números.
+//   - Valida que el título no rebase los 100 caracteres.
+//   - Valida que el director no rebase los 50 caracteres.
+//   - Valida que el año de estreno sea un número entero de 4 dígitos.
+//   - Valida que el país o paises sea introducidos en forma de arreglo.
+//   - Valida que los géneros sean introducidos en forma de arreglo.
+//   - Valida que los géneros introducidos esten dentro de los géneros 
+//      aceptados*.
+//   - Crea un método estático que devuelva los géneros aceptados*.
+//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+//     decimal de una posición.
+//   - Crea un método que devuelva toda la ficha técnica de la película.
+//   - Apartir de un arreglo con la información de 3 películas genera 3 
+//     instancias de la clase de forma automatizada e imprime la ficha técnica 
+//     de cada película.
 
 
+// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+
+class pelicula{
+  constructor(){
+    
+  }
+}
 
