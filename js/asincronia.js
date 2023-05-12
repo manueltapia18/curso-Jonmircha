@@ -1,0 +1,1 @@
+//temportizadores (setimouse-setinterval)   
